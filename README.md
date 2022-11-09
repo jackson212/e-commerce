@@ -1,2 +1,2 @@
 # e-commerce
-coffe -mug shop e-commerce application. Here it contain admin page ,[ayment ,cart
+This is online fruits shop .where you can order fruites according to ypur interest
