@@ -57,13 +57,22 @@ const userCtrl = {
             // If login success , create access token and refresh token
             const accesstoken = createAccessToken({id: user._id})
             const refreshtoken = createRefreshToken({id: user._id})
-
+             console.log(refreshtoken)
             res.cookie('refreshtoken', refreshtoken, {
+                
                 httpOnly: true,
-                path: '/user/refreshtoken',
+             
+                
+            
+                origin: '/user/refreshtoken',
+              
               
             })
+            
 
+              
+
+                 
             res.json({accesstoken,})
 
         } catch (err) {
@@ -82,7 +91,7 @@ const userCtrl = {
         try {
             const rf_token = req.cookies.refreshtoken;
             console.log("refresh......",rf_token)
-            if(!rf_token) return res.status(400).json({msg: "Please Login or Register"})
+            if(!rf_token) return res.status(400).json({msg: "empty token"})
 
             jwt.verify(rf_token, process.env.JWT_REFRESH_SECRET, (err, user) =>{
                 if(err) return res.status(400).json({msg: "Please erorLogin or Register"})

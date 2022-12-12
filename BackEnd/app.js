@@ -14,7 +14,7 @@ const app=express()
 
 app.use(express.json())
 
-app.use(cors())
+
 
 app.use(cookieparser())
 
@@ -22,6 +22,9 @@ app.use(fileupload({
 
      useTempFiles:true
 }))
+
+
+app.use(cors());
 
 const  userRouter=require("./src/routes/userRouter")
 

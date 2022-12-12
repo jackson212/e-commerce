@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "proxy": "http://localhost:5000",
   "scripts": {
     "start": "nodemon app.js"
   },
@@ -19,6 +20,7 @@
     "express-fileupload": "^1.4.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.7.2",
+    "react-paypal-express-checkout": "^1.0.5",
     "redis": "^4.5.0"
   },
   "devDependencies": {
